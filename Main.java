@@ -8,7 +8,7 @@ public class Main {
     // (displayMenu, clearConsole, pressEnterToContinue methods are unchanged)
     private static void displayMenu() {
         System.out.println("=============================================");
-        System.out.println("│        📚 Library Management System 📚     │");
+        System.out.println("│          Library Management System        │");
         System.out.println("=============================================");
         System.out.println("│                                           │");
         System.out.println("│   1. Add a new Book                       │");
@@ -63,7 +63,7 @@ public class Main {
             try {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("❌ Invalid input. Please enter a number.");
+                System.out.println(" Invalid input. Please enter a number.");
                 pressEnterToContinue(scanner);
                 continue;
             }
@@ -85,7 +85,7 @@ public class Main {
                     System.out.printf("%-20s: ", "Enter book ISBN");
                     String isbn = scanner.nextLine();
                     library.addBook(new Book(title, author, isbn));
-                    System.out.println("\n✅ Book added successfully!");
+                    System.out.println("\n Book added successfully!");
                     break;
                 case 2:
                     System.out.println("+------------------------------------------+");
@@ -96,7 +96,7 @@ public class Main {
                     System.out.printf("%-20s: ", "Enter member ID");
                     int id = Integer.parseInt(scanner.nextLine());
                     library.addMember(new Member(name, id));
-                    System.out.println("\n✅ Member added successfully!");
+                    System.out.println("\n Member added successfully!");
                     break;
                 case 3:
                     library.displayAllBooks();
@@ -112,14 +112,14 @@ public class Main {
                     int memberIdBorrow = Integer.parseInt(scanner.nextLine());
                     Member borrower = library.findMemberById(memberIdBorrow);
                     if (borrower == null) {
-                        System.out.println("❌ Member not found.");
+                        System.out.println(" Member not found.");
                         break;
                     }
                     System.out.printf("%-20s: ", "Enter book ISBN");
                     String isbnBorrow = scanner.nextLine();
                     Book bookToBorrow = library.findBookByIsbn(isbnBorrow);
                     if (bookToBorrow == null) {
-                        System.out.println("❌ Book not found.");
+                        System.out.println(" Book not found.");
                         break;
                     }
                     borrower.borrowBook(bookToBorrow);
@@ -132,14 +132,14 @@ public class Main {
                     int memberIdReturn = Integer.parseInt(scanner.nextLine());
                     Member returner = library.findMemberById(memberIdReturn);
                     if (returner == null) {
-                        System.out.println("❌ Member not found.");
+                        System.out.println(" Member not found.");
                         break;
                     }
                     System.out.printf("%-20s: ", "Enter book ISBN");
                     String isbnReturn = scanner.nextLine();
                     Book bookToReturn = library.findBookByIsbn(isbnReturn);
                     if (bookToReturn == null) {
-                        System.out.println("❌ Book not found.");
+                        System.out.println(" Book not found.");
                         break;
                     }
                     returner.returnBook(bookToReturn);
@@ -156,7 +156,7 @@ public class Main {
                     if (memberToShow != null) {
                         memberToShow.displayBorrowedBooks();
                     } else {
-                        System.out.println("❌ Member not found.");
+                        System.out.println(" Member not found.");
                     }
                     break;
 
@@ -165,12 +165,12 @@ public class Main {
                     break;
 
                 case 9:
-                    System.out.println("Thank you for using the Library Management System. Exiting... 👋");
+                    System.out.println("Thank you for using the Library Management System. Exiting... ");
                     scanner.close();
                     return;
 
                 default:
-                    System.out.println("❌ Invalid choice. Please select a number between 1 and 9.");
+                    System.out.println(" Invalid choice. Please select a number between 1 and 9.");
             }
 
             if (choice != 9) {

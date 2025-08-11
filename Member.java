@@ -32,9 +32,9 @@ public class Member {
         if (book.isAvailable()) {
             book.setAvailable(false);
             this.borrowedBooks.add(book);
-            System.out.println("✅ " + name + " successfully borrowed '" + book.getTitle() + "'.");
+            System.out.println(name + " successfully borrowed '" + book.getTitle() + "'.");
         } else {
-            System.out.println("❌ Sorry, the book '" + book.getTitle() + "' is currently not available.");
+            System.out.println(" Sorry, the book '" + book.getTitle() + "' is currently not available.");
         }
     }
 
@@ -42,9 +42,9 @@ public class Member {
         if (borrowedBooks.contains(book)) {
             book.setAvailable(true);
             this.borrowedBooks.remove(book);
-            System.out.println("✅ " + name + " successfully returned '" + book.getTitle() + "'.");
+            System.out.println(name + " successfully returned '" + book.getTitle() + "'.");
         } else {
-            System.out.println("❌ Error: This member did not borrow the book '" + book.getTitle() + "'.");
+            System.out.println("Error: This member did not borrow the book '" + book.getTitle() + "'.");
         }
     }
 
